@@ -1,0 +1,61 @@
+﻿<Window x:Class="RA1522014.FilterResursa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Filtriranje resursa" Height="498" Width="674" ResizeMode="NoResize">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <Grid>
+        <TextBox IsEnabled="{Binding ElementName=oznakaCheckBox, Path=IsChecked}" Height="23" HorizontalAlignment="Left" Margin="131,45,0,0" Name="oznakaResursa" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="" Height="19" HorizontalAlignment="Left" Margin="257,49,0,0" Name="oznakaCheckBox" VerticalAlignment="Top" />
+        <Label Content="Oznaka:" Height="28" HorizontalAlignment="Left" Margin="73,41,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Naziv:" Height="28" HorizontalAlignment="Left" Margin="83,84,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox IsEnabled="{Binding ElementName=nazivCheckBox, Path=IsChecked}" Height="22" HorizontalAlignment="Left" Margin="131,88,0,0" Name="nazivResursa" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="" Height="22" HorizontalAlignment="Left" Margin="257,91,0,0" Name="nazivCheckBox" VerticalAlignment="Top" Width="20" />
+        <Label Content="Tip:" Height="28" HorizontalAlignment="Left" Margin="96,128,0,0" Name="label3" VerticalAlignment="Top" />
+        <TextBox IsEnabled="{Binding ElementName=tipCheckBox, Path=IsChecked}" Height="23" HorizontalAlignment="Left" Margin="131,132,0,0" Name="tipResursa" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="" Height="23" HorizontalAlignment="Left" Margin="257,135,0,0" Name="tipCheckBox" VerticalAlignment="Top" Width="19" />
+        <xctk:CheckListBox IsEnabled="{Binding ElementName=etiketeCheckBox, Path=IsChecked}" Name="etiketeResursa" BorderBrush="Black" BorderThickness="1" Margin="131,180,0,0" Height="84" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
+        </xctk:CheckListBox>
+        <Label Content="Etiketa:" Height="28" HorizontalAlignment="Left" Margin="77,182,0,0" Name="label4" VerticalAlignment="Top" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="257,187,0,0" Name="etiketeCheckBox" VerticalAlignment="Top" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="584,47,0,0" Name="obnovljivCheckBox" VerticalAlignment="Top" />
+        <Label Content="Obnovljiv?" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="386,40,0,0" Name="label5" VerticalAlignment="Top" />
+        <RadioButton  IsEnabled="{Binding ElementName=obnovljivCheckBox, Path=IsChecked}" Content="Da" Height="16" HorizontalAlignment="Left" Margin="466,46,0,0" Name="obnovljivTrue" GroupName="obnovljiv" VerticalAlignment="Top" />
+        <RadioButton  IsEnabled="{Binding ElementName=obnovljivCheckBox, Path=IsChecked}" Content="Ne" Height="16" HorizontalAlignment="Left" Margin="523,46,0,0" Name="obnovljivFalse" GroupName="obnovljiv" VerticalAlignment="Top" />
+        <Label Content="Važan?" Height="28" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="396,84,0,0" Name="label6" VerticalAlignment="Top" Width="56" />
+        <RadioButton IsEnabled="{Binding ElementName=vaznostCheckBox, Path=IsChecked}" Content="Da" Height="16" HorizontalAlignment="Left" Margin="466,90,0,0" GroupName="vaznost" Name="vazanTrue" VerticalAlignment="Top" />
+        <RadioButton IsEnabled="{Binding ElementName=vaznostCheckBox, Path=IsChecked}" Content="Ne" Height="16" HorizontalAlignment="Left" Margin="523,90,0,0" GroupName="vaznost" Name="vazanFalse" VerticalAlignment="Top" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="584,90,0,0" Name="vaznostCheckBox" VerticalAlignment="Top" />
+        <Label Content="Eksploatacija?" Height="28" HorizontalAlignment="Left" Margin="369,133,0,0" Name="label7" VerticalAlignment="Top" />
+        <RadioButton IsEnabled="{Binding ElementName=eksploatacijaCheckBox, Path=IsChecked}" Content="Da" Height="16" HorizontalAlignment="Left" Margin="466,139,0,0" GroupName="eksploatacija" Name="eksploatacijaTrue" VerticalAlignment="Top" />
+        <RadioButton IsEnabled="{Binding ElementName=eksploatacijaCheckBox, Path=IsChecked}" Content="Ne" Height="16" HorizontalAlignment="Left" Margin="523,139,0,0" GroupName="eksploatacija" Name="eksploatacijaFalse" VerticalAlignment="Top" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="584,139,0,0" Name="eksploatacijaCheckBox" VerticalAlignment="Top" />
+        <ComboBox Height="23" IsEnabled="{Binding ElementName=mjeraCheckBox, Path=IsChecked}" HorizontalAlignment="Left" Margin="131,292,0,0" Name="mjera" VerticalAlignment="Top" Width="120" >
+            <ComboBoxItem>Mjerica</ComboBoxItem>
+            <ComboBoxItem>Barel</ComboBoxItem>
+            <ComboBoxItem>Tona</ComboBoxItem>
+            <ComboBoxItem>Kilogram</ComboBoxItem>     
+        </ComboBox>
+        <Label Content="Jedinica mjere:" Height="28" HorizontalAlignment="Left" Margin="37,287,0,0" Name="label8" VerticalAlignment="Top" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="256,297,0,0" Name="mjeraCheckBox" VerticalAlignment="Top" />
+        <Label Content="  Frekvencija&#xa;pojavljivanja:" HorizontalContentAlignment="Right" Height="42" HorizontalAlignment="Left" Margin="37,329,0,0" Name="label9" VerticalAlignment="Top" Width="88" />
+        <ComboBox  IsEnabled="{Binding ElementName=pojavljivanjeCheckBox, Path=IsChecked}" Height="23" HorizontalAlignment="Left" Margin="131,340,0,0" Name="pojavljivanje" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>Rijedak</ComboBoxItem>
+            <ComboBoxItem>Čest</ComboBoxItem>
+            <ComboBoxItem>Univerzalan</ComboBoxItem>
+        </ComboBox>
+        <CheckBox Content="" HorizontalAlignment="Left" Margin="256,344,0,0" Name="pojavljivanjeCheckBox" Width="21" Height="19" VerticalAlignment="Top" />
+        <Label Content="Cijena (u dolarima):" Height="28" HorizontalAlignment="Left" Margin="340,191,0,0" Name="label10" VerticalAlignment="Top" />
+        <TextBox  IsEnabled="{Binding ElementName=cijenaCheckBox, Path=IsChecked}" Height="23" HorizontalAlignment="Left" Margin="458,191,0,0" Name="cijena" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="584,194,0,0" Name="cijenaCheckBox" VerticalAlignment="Top" />
+        <Label Content="Datum otkrivanja:" Height="28" HorizontalAlignment="Left" Margin="349,236,0,0" Name="label11" VerticalAlignment="Top" />
+        <DatePicker IsEnabled="{Binding ElementName=datumCheckBox, Path=IsChecked}" Height="25" HorizontalAlignment="Left" Margin="463,239,0,0" Name="datum" VerticalAlignment="Top" Width="115" />
+        <CheckBox Content="" Height="21" Margin="584,243,0,0" Name="datumCheckBox" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43" />
+        <Label Content="Opis:" Height="28" HorizontalAlignment="Left" Margin="415,282,0,0" Name="label12" VerticalAlignment="Top" />
+        <TextBox IsEnabled="{Binding ElementName=opisCheckBox, Path=IsChecked}" Height="23" HorizontalAlignment="Left" Margin="458,287,0,0" Name="opisResursa" VerticalAlignment="Top" Width="120" />
+        <CheckBox Content="" Height="16" HorizontalAlignment="Left" Margin="584,290,0,0" Name="opisCheckBox" VerticalAlignment="Top" Width="20" />
+        <Button Content="Filtriraj" Height="33" HorizontalAlignment="Left" Margin="490,393,0,0" Name="button1" VerticalAlignment="Top" Width="88" Click="filtrirajResurse_Click" />
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="RA1522014.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:HelpSistem"
+        Title="Mapa svjetskih resursa" Height="675" Width="1110" ResizeMode="CanMinimize" l:HelpProvider.HelpKey="Main">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <Grid Height="610" Width="1045">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Dodaj novi resurs" Click="NoviResursClick" Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,104,0,0" Name="noviResursBtn" VerticalAlignment="Top" Width="154" Background="#00000000" Foreground="Black" BorderBrush="#00000000" FontSize="14" />
+        <Button Content="Dodaj novi tip" Click ="NoviTipClick" Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,143,0,0" Name="noviTipBtn" VerticalAlignment="Top" Width="154" Background="#00000000" BorderBrush="#00000000" FontSize="14" />
+        <Button Content="Dodaj novu etiketu" Click="NovaEtiketaClick" Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,187,0,0" Name="novaEtiketaBtn" VerticalAlignment="Top" Width="154" Background="#00000000" BorderBrush="#00000000" FontSize="14" />
+        <ContentControl x:Name="contentControl" Grid.Row="1" Margin="206,55,35,12"></ContentControl>
+        <Button Content="Mapa" Click="MapaClick" Name="mapaBtn" Margin="0,0,966,554" Grid.Row="1" Background="#002B9393" BorderBrush="#00000000" FontSize="22" />
+        <Button Content="Prikaži resurse" Click="prikaziResurse_Click" Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,254,0,0" Name="prikaziResurseBtn" VerticalAlignment="Top" Width="154" Background="#00000000" BorderBrush="#00000000" FontSize="14" />
+        <Button Content="Prikaži tipove" Click="prikaziTipove_Click"  Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,293,0,0" Name="prikaziTipoveBtn" VerticalAlignment="Top" Width="154" Background="#00000000" FontSize="14" BorderBrush="#00000000"  />
+        <Button Content="Prikaži etikete" Click="prikaziEtikete_Click" Grid.Row="1" Height="33" HorizontalAlignment="Left" Margin="24,0,0,245" Name="prikaziEtiketeBtn" VerticalAlignment="Bottom" Width="154" Background="#00000000" BorderBrush="#00000000" FontSize="14" />
+        <Button Content="Tutorijal: dodavanje tipa" Height="33" Name="tutorijalBtn" Margin="12,401,854,172" Grid.Row="1" Background="#00000000" Foreground="Black" BorderBrush="#00000000" FontSize="14" Click="tutorijal_Click" />
+        <Ellipse Name="dodajTipTut" Stroke="#00000000" Width="200" Margin="0,187,845,308" Grid.Row="1" Fill="Black" Visibility="Hidden" OpacityMask="Black" />
+        <TextBlock Name="dodajTipTB" Text="Za dodavanje novog
+tipa kliknite na polje
+Dodaj novi tip" Margin="36,212,881,333" Grid.Row="1" Visibility="Hidden" Foreground="white" Background="Black" TextWrapping="WrapWithOverflow" FontSize="14" TextAlignment="Center"></TextBlock>
+        <Button Content="Zatvori tutorijal" Grid.Row="1" Height="35" HorizontalAlignment="Left" Margin="833,18,0,0" Name="zatvoriTutorijalBtn" VerticalAlignment="Top" Width="177" FontSize="18" Background="#00000000" BorderBrush="#00000000" Click="zatvoriTutorijal_Click" Visibility="Hidden" />
+        <Ellipse Name="prikaziTipTut" Stroke="Black" Width="200" Margin="0,143,845,323" Grid.Row="1" Fill="Black" Visibility="Hidden" />
+        <TextBlock Name="prikaziTipTB" Text="Za tabelarni prikaz postojećih tipova i njihovo filtriranje kliknite na polje Prikaži tipove" Margin="36,165,881,351" Grid.Row="1" Background="Black" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontSize="14" Visibility="Hidden" />
+        <Ellipse Grid.Row="1" Height="126" HorizontalAlignment="Left" Margin="24,18,0,0" Name="krajTut" Stroke="Black" VerticalAlignment="Top" Width="185" Visibility="Hidden" Fill="Black" />
+        <TextBlock Grid.Row="1" Height="81" HorizontalAlignment="Left" Margin="57,41,0,0" Name="krajTB" Text="Čestitamo! Uspješno ste isfiltrirali tipove! Za izlazak iz tutorijala kliknite na dugme Zatvori tutorijal" VerticalAlignment="Top" Width="121" Background="Black" Foreground="White" TextWrapping="WrapWithOverflow" TextAlignment="Center" Visibility="Hidden" />
+        <Button Content="Tutorijal: filtriranje tipova" Name="filterTutBtn" Margin="12,444,854,128" Grid.Row="1" FontSize="14" Background="#00000000" BorderBrush="#00000000" Click="tutorijalPrikazi_Click" />
+    </Grid>
+</Window>
